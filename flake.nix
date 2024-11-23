@@ -83,7 +83,7 @@
               homepage = "https://github.com/WhiteBlackGoose/nix-show";
               license = pkgs.lib.licenses.mit;
               platforms = pkgs.lib.platforms.all;
-              description = "Shows main meta attributes of a package";
+              description = "Shows main meta attributes of a nix package in a flake";
             };
           });
         }
