@@ -5,22 +5,6 @@
     let
       systems = [ "aarch64-darwin" "x86_64-darwin" "aarch64-linux" "x86_64-linux" ];
     in {
-      devShells = nixpkgs.lib.genAttrs systems (system:
-        let 
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        {
-          default = pkgs.mkShell {
-            nativeBuildInputs = with pkgs; [
-              cargo
-              rustfmt
-              rust-analyzer
-              rustc
-            ];
-          };
-        }
-      );
-
       packages = nixpkgs.lib.genAttrs systems (system:
         let 
           pkgs = nixpkgs.legacyPackages.${system};
